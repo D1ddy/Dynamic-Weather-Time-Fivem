@@ -1,19 +1,20 @@
-RegisterCommand('svelte:show', function()
-    SendNUI('setVisible', true)
+RegisterCommand('weather', function()
+    SendNUI('openUI', true)
     SetNuiFocus(true, true)
-    print("Svelte showing")
+    SendNUI('getTime',GetClockHours())
+end, false)
+RegisterCommand('weather:random', function()
+    SetRandomWeatherType()
 end, false)
 
-RegisterNUICallback('getClientData', function(_, cb)
-    local playerCoords = GetEntityCoords(PlayerPedId())
-    cb({
-        x = math.ceil(playerCoords.x),
-        y = math.ceil(playerCoords.y),
-        z = math.ceil(playerCoords.z)
-    })
+RegisterNUICallback('setWeather', function(data,cb)
+    SetOverrideWeather(data)
 end)
-
-RegisterNUICallback('hideUI', function(_, cb)
+RegisterNUICallback('setTime', function(data,cb)
+    print(type(data))
+    NetworkOverrideClockTime(tonumber(data), 5, 5)
+end)
+RegisterNUICallback('close', function(_, cb)
     cb({})
     SetNuiFocus(false, false)
 end)

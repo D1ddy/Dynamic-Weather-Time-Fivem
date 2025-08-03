@@ -1,6 +1,6 @@
 <script lang="ts">
     import Button from "./button.svelte";
-    let typeOfWeather:Array<string> = ['sunny','rainy','cloudy','snowy'];
+    let typeOfWeather:Array<string> = ['CLEAR','RAIN','CLOUDS','SNOW'];
 </script>
 <style>
     div{

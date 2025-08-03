@@ -1,5 +1,8 @@
 <script lang="ts">
+	import { fetchNui } from "$lib/utils/fetchNui";
+    import { visible } from "src/store";
     let {weather} = $props();
+    
 </script>
 <style>
     button{
@@ -17,4 +20,8 @@
         height: 7.8vh;
     }
 </style>
-<button> {weather} </button>
+<button onclick="{() => {
+    fetchNui('setWeather',JSON.stringify(weather));
+    fetchNui('close');
+    visible.set(false);
+}}"> {weather} </button>
