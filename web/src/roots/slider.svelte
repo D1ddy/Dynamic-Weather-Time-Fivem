@@ -6,9 +6,8 @@
     useNuiEvent('getTime',(data:number) => {
         inGameTime = data;
     })
-    function changeTime(event:any){
-      	
-        fetchNui('setTime',event.target.value);
+    function changeTime(event:any){	
+      fetchNui('setTime',event.target.value);
     }
 </script>
 <style>
@@ -23,7 +22,11 @@
     }
     #inGameTimeDiv{
         font-size: 4vh;
-        color: white;
+        color: rgb(230, 230, 230);
+        font-family: "Google Sans Code", monospace;
+        font-optical-sizing: auto;
+        font-weight: 300;
+        font-style: italic;
     }
     input{
         width: 70vh;
@@ -53,7 +56,7 @@ input[type="range"]:focus {
 /******** Chrome, Safari, Opera and Edge Chromium styles ********/
 /* slider track */
 input[type="range"]::-webkit-slider-runnable-track {
- background-color: #483057;
+ background-color: #395074;
   border-radius: 2rem;
   height: 1.5rem;
 }
@@ -78,7 +81,7 @@ input[type="range"]:focus::-webkit-slider-thumb {
 /*********** Firefox styles ***********/
 /* slider track */
 input[type="range"]::-moz-range-track {
-  background-color: #483057;
+  background-color: #395074;
   border-radius: 2rem;
   height: 1.5rem;
 }
