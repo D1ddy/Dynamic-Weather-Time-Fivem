@@ -56,7 +56,7 @@ input[type="range"]:focus {
 /******** Chrome, Safari, Opera and Edge Chromium styles ********/
 /* slider track */
 input[type="range"]::-webkit-slider-runnable-track {
- background-color: #395074;
+ background-color: rgb(62, 67, 110);
   border-radius: 2rem;
   height: 1.5rem;
 }
@@ -81,7 +81,7 @@ input[type="range"]:focus::-webkit-slider-thumb {
 /*********** Firefox styles ***********/
 /* slider track */
 input[type="range"]::-moz-range-track {
-  background-color: #395074;
+  background-color: rgb(62, 67, 110);
   border-radius: 2rem;
   height: 1.5rem;
 }
